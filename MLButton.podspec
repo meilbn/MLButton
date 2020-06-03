@@ -14,12 +14,13 @@ Pod::Spec.new do |spec|
 
   spec.description  = <<-DESC
                   - A custom UIButton, can set imageView's position, badge and badge's position.
+                  - UIButton 自定义控件，可以设置图片的位置、角标以及角标的位置。
                   - iOS 8+
                   - Xcode 11.3+
                    DESC
 
   spec.homepage     = "https://github.com/meilbn/MLButton"
-  spec.screenshots  = "https://github.com/meilbn/MLButton/Screenshots/Simulator-Screen-Shot-iPhone-11-Pro-Max.png"
+  spec.screenshots  = "https://github.com/meilbn/MLButton/blob/master/Screenshots/Simulator-Screen-Shot-iPhone-11-Pro-Max.png"
 
   spec.license      = "MIT"
 
