@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
                    DESC
 
   spec.homepage     = "https://github.com/meilbn/MLButton"
-  spec.screenshots  = "https://github.com/meilbn/MLButton/blob/master/Screenshots/Simulator-Screen-Shot-iPhone-11-Pro-Max.png"
+  spec.screenshots  = "https://github.com/meilbn/MLButton/Screenshots/Simulator-Screen-Shot-iPhone-11-Pro-Max.png"
 
   spec.license      = "MIT"
 
