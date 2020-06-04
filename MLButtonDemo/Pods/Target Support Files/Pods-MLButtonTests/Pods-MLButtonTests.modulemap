@@ -1,0 +1,6 @@
+framework module Pods_MLButtonTests {
+  umbrella header "Pods-MLButtonTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
