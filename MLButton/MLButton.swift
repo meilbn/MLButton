@@ -474,10 +474,7 @@ class MLButton: UIButton {
     // MARK: Private Methods
     
     private func _setup() {
-        #if DEBUG
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.borderWidth = 1.0 / UIScreen.main.scale
-        #endif
+        
     }
     
     // MARK: Public Methods
