@@ -91,9 +91,9 @@ import UIKit
  *
  */
 
-class MLButton: UIButton {
+open class MLButton: UIButton {
     
-    enum ImagePosition {
+    public enum ImagePosition {
         case top, left, bottom, right
         
         var stringValue: String {
@@ -110,7 +110,7 @@ class MLButton: UIButton {
         }
     }
     
-    enum BadgePosition {
+    public enum BadgePosition {
         // with Label
         case labelTopLeft, labelTopRight, labelBottomLeft, labelBottomRight
         // with ImageView
@@ -121,19 +121,19 @@ class MLButton: UIButton {
 
     // MARK: Properties
     
-    var imagePosition: ImagePosition = .left {
+    public var imagePosition: ImagePosition = .left {
         didSet {
             self.setNeedsLayout()
         }
     }
     
-    var imageFixedSize: CGSize = .zero { // zero means no restrict
+    public var imageFixedSize: CGSize = .zero { // zero means no restrict
         didSet {
             self.setNeedsLayout()
         }
     }
     
-    var badgePosition: BadgePosition = .contentTopRight {
+    public var badgePosition: BadgePosition = .contentTopRight {
         didSet {
             if nil != badgeView {
                 self.setNeedsLayout()
@@ -154,7 +154,7 @@ class MLButton: UIButton {
         _setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -164,7 +164,7 @@ class MLButton: UIButton {
         self.setTitle(title, for: .normal)
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         calculate()
     }
@@ -479,7 +479,7 @@ class MLButton: UIButton {
     
     // MARK: Public Methods
     
-    func setBadgeValue(_ badge: String?, at position: BadgePosition) {
+    public func setBadgeValue(_ badge: String?, at position: BadgePosition) {
         if nil == badge || "" == badge {
             badgeView?.removeFromSuperview()
             badgeView = nil
@@ -497,17 +497,17 @@ class MLButton: UIButton {
     
     // MARK: Parent Methods
     
-    override func setImage(_ image: UIImage?, for state: UIControl.State) {
+    public override func setImage(_ image: UIImage?, for state: UIControl.State) {
         super.setImage(image, for: state)
         self.setNeedsLayout()
     }
     
-    override func setTitle(_ title: String?, for state: UIControl.State) {
+    public override func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: state)
         self.setNeedsLayout()
     }
     
-    override var intrinsicContentSize: CGSize {
+    public override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
         debugPrint("MLButton super intrinsicContentSize = \(size), currentContentSize = \(currentContentSize)")
         if .zero != currentContentSize {

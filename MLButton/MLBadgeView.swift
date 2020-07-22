@@ -8,29 +8,29 @@
 
 import UIKit
 
-class MLBadgeView: UIView {
+open class MLBadgeView: UIView {
 
     // MARK: Properties
     
-    var badgeBackgroundColor = UIColor(red: 1.0, green: 56 / 255.0, blue: 36 / 255.0, alpha: 1.0) {
+    public var badgeBackgroundColor = UIColor(red: 1.0, green: 56 / 255.0, blue: 36 / 255.0, alpha: 1.0) {
         didSet {
             shapeLayer.fillColor = badgeBackgroundColor.cgColor
         }
     }
     
-    var badgeBorderColor: UIColor = .white {
+    public var badgeBorderColor: UIColor = .white {
         didSet {
             shapeLayer.strokeColor = badgeBorderColor.cgColor
         }
     }
     
-    var badgeBorderWidth: CGFloat = 0.0 {
+    public var badgeBorderWidth: CGFloat = 0.0 {
         didSet {
             shapeLayer.lineWidth = badgeBorderWidth
         }
     }
     
-    var value: String? = nil {
+    public var value: String? = nil {
         didSet {
             badgeLabel.text = value
             badgeLabel.isHidden = nil == value || "" == value
@@ -38,19 +38,19 @@ class MLBadgeView: UIView {
         }
     }
     
-    var textColor: UIColor = .white {
+    public var textColor: UIColor = .white {
         didSet {
             badgeLabel.textColor = textColor
         }
     }
     
-    var font = UIFont.systemFont(ofSize: 13) {
+    public var font = UIFont.systemFont(ofSize: 13) {
         didSet {
             badgeLabel.font = font
         }
     }
     
-    var maxWidth: CGFloat = 0 { // less than or equals to 0 means no restrict
+    public var maxWidth: CGFloat = 0 { // less than or equals to 0 means no restrict
         didSet {
             self.setNeedsLayout()
         }
@@ -69,11 +69,11 @@ class MLBadgeView: UIView {
         setupViews()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         badgeLabel.sizeToFit()
