@@ -158,7 +158,7 @@ open class MLButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(image: UIImage?, title: String?) {
+    public convenience init(image: UIImage?, title: String?) {
         self.init(frame: .zero)
         self.setImage(image, for: .normal)
         self.setTitle(title, for: .normal)
