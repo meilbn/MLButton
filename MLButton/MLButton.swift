@@ -145,7 +145,7 @@ open class MLButton: UIButton {
     
     // MARK: UI
     
-    private(set) var badgeView: MLBadgeView?
+    public private(set) var badgeView: MLBadgeView?
     
     // MARK: Lifecycle
     
