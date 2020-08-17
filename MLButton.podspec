@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "MLButton"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "UIButton 自定义控件，可以设置图片的位置、角标以及角标的位置。 / A custom UIButton, can set imageView's position, badge and badge's position."
 
   spec.description  = <<-DESC
