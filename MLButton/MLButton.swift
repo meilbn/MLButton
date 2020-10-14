@@ -219,7 +219,7 @@ open class MLButton: UIButton {
             contentSize.height += self.contentEdgeInsets.bottom
         }
         
-        debugPrint("self.bounds.size = \(self.bounds.size), contentSize = \(contentSize), position = \(imagePosition.stringValue)")
+//        debugPrint("self.bounds.size = \(self.bounds.size), contentSize = \(contentSize), position = \(imagePosition.stringValue)")
         
         // Layout
         switch imagePosition {
@@ -509,7 +509,7 @@ open class MLButton: UIButton {
     
     public override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
-        debugPrint("MLButton super intrinsicContentSize = \(size), currentContentSize = \(currentContentSize)")
+//        debugPrint("MLButton super intrinsicContentSize = \(size), currentContentSize = \(currentContentSize)")
         if .zero != currentContentSize {
             return currentContentSize
         }
