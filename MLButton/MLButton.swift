@@ -149,7 +149,7 @@ open class MLButton: UIButton {
     
     // MARK: Lifecycle
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         _setup()
     }
