@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     // MARK: UI
     
+    private var homeButton: MLButton!
+    
     private var button: UIButton!
     
     private var topButton: MLButton!
@@ -39,6 +41,22 @@ class ViewController: UIViewController {
     // MARK: Private Methods
     
     private func setupViews() {
+        homeButton = MLButton(type: .system)
+        homeButton.setImage(UIImage(named: "icon_arrow_down_15")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        homeButton.setTitle("My Home My Home My Home My Home My Home My Home My Home", for: .normal)
+        homeButton.setTitleColor(UIColor(white: 51 / 255.0, alpha: 1.0), for: .normal)
+        homeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+//        homeButton.titleLabel?.preferredMaxLayoutWidth = self.view.bounds.width - 25 * 2
+        homeButton.titleLabel?.lineBreakMode = .byTruncatingTail
+        homeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        homeButton.tintColor = UIColor(white: 51 / 255.0, alpha: 1.0)
+        homeButton.imagePosition = .right
+        homeButton.preferredMaxLayoutWidth = self.view.bounds.width - 25 * 2
+//        homeButton.addTarget(self, action: #selector(switchHomeAction), for: .touchUpInside)
+//        homeButton.sizeToFit()
+//        homeButton.widthAnchor.constraint(lessThanOrEqualToConstant: Constants.screenWidth - 25 * 2).isActive = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: homeButton)
+        
         button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
         button.setImage(UIImage(named: "icon_praised"), for: .normal)
         button.setTitle("点赞", for: .normal)

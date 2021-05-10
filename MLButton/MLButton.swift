@@ -141,6 +141,36 @@ open class MLButton: UIButton {
         }
     }
     
+    public var preferredMaxLayoutWidth: CGFloat = 0 {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    
+//    public var preferredMaxLayoutHeight: CGFloat = 0 {
+//        didSet {
+//            self.setNeedsLayout()
+//        }
+//    }
+    
+    open override var imageEdgeInsets: UIEdgeInsets {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    
+    open override var titleEdgeInsets: UIEdgeInsets {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    
+    open override var contentEdgeInsets: UIEdgeInsets {
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    
     private var currentContentSize: CGSize = .zero
     
     // MARK: UI
@@ -218,6 +248,27 @@ open class MLButton: UIButton {
             contentSize.width += self.contentEdgeInsets.right
             contentSize.height += self.contentEdgeInsets.bottom
         }
+        
+        if preferredMaxLayoutWidth > 0 && contentSize.width > preferredMaxLayoutWidth {
+            contentSize.width = preferredMaxLayoutWidth
+            
+            switch imagePosition {
+            case .top, .bottom:
+                let titleMaxWidth = preferredMaxLayoutWidth - self.contentEdgeInsets.left - self.titleEdgeInsets.left - self.titleEdgeInsets.right - self.contentEdgeInsets.right
+                if titleSize.width > titleMaxWidth {
+                    titleSize.width = titleMaxWidth
+                }
+            case .left, .right:
+                let titleMaxWidth = preferredMaxLayoutWidth - self.contentEdgeInsets.left - self.imageEdgeInsets.left - imageViewSize.width - self.imageEdgeInsets.right - self.titleEdgeInsets.left - self.titleEdgeInsets.right - self.contentEdgeInsets.right
+                if titleSize.width > titleMaxWidth {
+                    titleSize.width = titleMaxWidth
+                }
+            }
+        }
+        
+//        if preferredMaxLayoutHeight > 0 && contentSize.height > preferredMaxLayoutHeight {
+//            contentSize.height = preferredMaxLayoutHeight
+//        }
         
 //        debugPrint("self.bounds.size = \(self.bounds.size), contentSize = \(contentSize), position = \(imagePosition.stringValue)")
         
