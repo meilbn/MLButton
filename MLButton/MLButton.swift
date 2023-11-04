@@ -127,7 +127,8 @@ open class MLButton: UIButton {
         }
     }
     
-    public var imageFixedSize: CGSize = .zero { // zero means no restrict
+    // zero means no restrict
+    public var imageFixedSize: CGSize = .zero {
         didSet {
             self.setNeedsLayout()
         }
