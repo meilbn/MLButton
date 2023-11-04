@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
 
   spec.author             = { "Meilbn" => "codingallnight@gmail.com" }
   
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "12.0"
   spec.swift_versions = ['5.0']
 
   spec.source       = { :git => "https://github.com/meilbn/MLButton.git", :tag => "#{spec.version}" }
